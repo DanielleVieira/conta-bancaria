@@ -1,5 +1,5 @@
 import ILogger from "../loggers/ILogger";
-import Validacao from "../validacoes/Validacao";
+import Validacao from "../validacoes/ValidacaoConta";
 import ContaBancaria from "./ContaBancaria";
 
 export default class ContaPoupanca extends ContaBancaria {

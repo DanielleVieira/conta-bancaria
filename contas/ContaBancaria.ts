@@ -1,7 +1,7 @@
 import ILogger from "../loggers/ILogger";
 import OperacoesBancarias from "./OperacoesBancarias";
 import { Operacoes } from "../loggers/Operacoes";
-import Validacao from "../validacoes/Validacao";
+import Validacao from "../validacoes/ValidacaoConta";
 
 export default class ContaBancaria implements OperacoesBancarias {
   private _numeroConta: string;

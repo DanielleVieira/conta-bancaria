@@ -1,5 +1,5 @@
+import Validacao from "../validacoes/ValidacaoLog";
 import ILogger from "./ILogger";
-import LogInvalidoError from "../excecoes/loggers/LogInvalidoError";
 import { Operacoes } from "./Operacoes";
 
 export default class Logger implements ILogger {
@@ -15,13 +15,10 @@ export default class Logger implements ILogger {
     valor: number,
     operacao: Operacoes
   ): void {
-    if (!numeroConta || !titular || valor <= 0) {
-      throw new LogInvalidoError("Numero da Conta, Titular ou Valor Inválidos");
-    } else {
-      this.logs.push(
-        `Operação de ${operacao} realizada na Conta - ${numeroConta}, CPF - ${titular}, com valor ${valor}`
-      );
-    }
+    Validacao.validaLog(numeroConta, titular, valor);
+    this.logs.push(
+      `Operação de ${operacao} realizada na Conta - ${numeroConta}, CPF - ${titular}, com valor ${valor}`
+    );
   }
 
   listarLogs(): string {
