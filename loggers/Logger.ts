@@ -23,4 +23,8 @@ export default class Logger implements ILogger {
       );
     }
   }
+
+  listarLogs(): string {
+    return this.logs.join("\n");
+  }
 }

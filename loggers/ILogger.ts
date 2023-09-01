@@ -7,4 +7,6 @@ export default interface ILogger {
     valor: number,
     operacao: Operacoes
   ): void;
+
+  listarLogs(): string;
 }
